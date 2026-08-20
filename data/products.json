@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": "bolo-pote",
+      "slug": "bolo-de-pote",
+      "name": "Bolo de Pote Artesanal",
+      "category": "bolos-de-pote",
+      "shortDescription": "Camadas macias e recheio generoso, feitos à mão em pequenas quantidades.",
+      "description": "Nosso bolo de pote é preparado artesanalmente, em camadas finas de massa e recheio, montado à mão dentro do pote para manter a cremosidade até a última colherada. Escolha o sabor que mais combina com você.",
+      "active": true,
+      "featured": true,
+      "badge": "Mais pedido",
+      "order": 1,
+      "seoTitle": "Bolo de Pote Artesanal — Ateliê da Duda",
+      "seoDescription": "Bolos de pote artesanais feitos à mão em Campo Grande - MS. Brigadeiro, Prestígio, Ninho e mais. Peça pelo WhatsApp.",
+      "variants": [
+        {
+          "id": "brigadeiro",
+          "slug": "brigadeiro",
+          "name": "Brigadeiro",
+          "description": "Massa de chocolate macia com recheio cremoso de brigadeiro artesanal.",
+          "price": 13.0,
+          "available": true,
+          "badge": null,
+          "order": 1,
+          "images": ["assets/products/placeholder-bolo-pote.svg"]
+        },
+        {
+          "id": "prestigio",
+          "slug": "prestigio",
+          "name": "Prestígio",
+          "description": "Massa de chocolate com recheio de brigadeiro e coco fresquinho.",
+          "price": 13.0,
+          "available": true,
+          "badge": null,
+          "order": 2,
+          "images": ["assets/products/placeholder-bolo-pote.svg"]
+        },
+        {
+          "id": "ninho",
+          "slug": "ninho",
+          "name": "Ninho",
+          "description": "Massa branca fofinha com creme de leite Ninho artesanal.",
+          "price": 13.0,
+          "available": true,
+          "badge": "Especial da Duda",
+          "order": 3,
+          "images": ["assets/products/placeholder-bolo-pote.svg"]
+        },
+        {
+          "id": "ninho-avela",
+          "slug": "ninho-creme-de-avela",
+          "name": "Ninho + Creme de Avelã",
+          "description": "Massa branca fofinha intercalada com creme de Ninho e creme de avelã.",
+          "price": 15.0,
+          "available": true,
+          "badge": "Novidade",
+          "order": 4,
+          "images": ["assets/products/placeholder-bolo-pote.svg"]
+        }
+      ]
+    }
+  ]
+}

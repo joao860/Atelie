@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seu pedido — Ateliê da Duda</title>
+<meta name="description" content="Revise seu pedido e finalize pelo WhatsApp com o Ateliê da Duda." />
+<link rel="icon" href="assets/logo/logo-atelie-da-duda.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/cart.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-hide-mini-cart="true">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<div class="global-banner" data-global-banner hidden></div>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="index.html" class="brand-mark brand-mark--logo"><img src="assets/logo/logo-atelie-da-duda.png" alt="Ateliê da Duda — Doces Artesanais" width="150" height="150" /></a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#como-pedir">Como pedir</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pedido.html" class="icon-btn" aria-label="Ver pedido" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h2l2.4 12.1a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+        <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
+      <button type="button" class="icon-btn icon-btn--menu" aria-label="Abrir menu" data-menu-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu data-open="false">
+  <div class="mobile-menu__overlay"></div>
+  <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="icon-btn mobile-menu__close" aria-label="Fechar menu" data-menu-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#como-pedir">Como pedir</a>
+    </nav>
+    <a href="cardapio.html" class="btn btn--primary btn--block">Fazer pedido</a>
+  </div>
+</div>
+
+<main id="main" class="cart-page">
+  <div class="container">
+    <h1>Seu pedido</h1>
+    <p class="cart-page__lead">Revise os itens, ajuste as quantidades e finalize pelo WhatsApp.</p>
+
+    <div data-cart-empty>
+      <div class="state-block">
+        <div class="state-block__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h2l2.4 12.1a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+        </div>
+        <h2>Seu pedido está vazio</h2>
+        <p>Escolha seus sabores favoritos no cardápio.</p>
+        <a href="cardapio.html" class="btn btn--primary">Ver cardápio</a>
+      </div>
+    </div>
+
+    <div data-cart-filled hidden>
+      <div class="cart-page__actions">
+        <button type="button" class="cart-clear" data-clear-cart><span aria-hidden="true">⌫</span> Esvaziar carrinho</button>
+      </div>
+      <div class="cart-layout">
+        <ul class="cart-list" data-cart-list aria-label="Itens do pedido"></ul>
+
+        <aside class="cart-summary">
+          <h2>Resumo do pedido</h2>
+          <div class="cart-summary__row">
+            <span data-cart-count-label>0 itens</span>
+            <span data-cart-subtotal>R$ 0,00</span>
+          </div>
+          <div class="cart-summary__total">
+            <span>Total</span>
+            <strong data-cart-total>R$ 0,00</strong>
+          </div>
+
+          <p class="unavailable-note" data-cart-paused-note hidden style="margin-top: var(--space-4)"></p>
+
+          <p style="font-size: var(--fs-xs); color: var(--color-text-soft); margin-top: var(--space-4)">
+            Você será direcionado ao WhatsApp para confirmar disponibilidade e combinar retirada ou entrega.
+          </p>
+
+          <button type="button" class="btn btn--primary btn--block" data-checkout-btn>Finalizar pelo WhatsApp</button>
+          <div class="cart-after-checkout" data-after-checkout hidden role="status">
+            <strong>Já enviou seu pedido pelo WhatsApp?</strong>
+            <p>Limpe somente depois de confirmar o envio.</p>
+            <div><button type="button" class="btn btn--ghost btn--sm" data-keep-cart>Manter pedido</button><button type="button" class="btn btn--secondary btn--sm" data-confirm-sent>Sim, limpar carrinho</button></div>
+          </div>
+          <a href="cardapio.html" class="text-link cart-summary__continue">Continuar escolhendo</a>
+
+          <p class="cart-summary__notice">O envio pelo WhatsApp não confirma automaticamente o pedido. A disponibilidade será confirmada pelo atendimento.</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="modal" data-clear-modal hidden>
+  <div class="modal__backdrop" data-modal-cancel></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="clear-cart-title" aria-describedby="clear-cart-desc">
+    <h2 id="clear-cart-title">Esvaziar seu pedido?</h2>
+    <p id="clear-cart-desc">Todos os itens serão removidos.</p>
+    <div class="modal__actions"><button type="button" class="btn btn--secondary" data-modal-cancel>Cancelar</button><button type="button" class="btn btn--danger" data-modal-confirm>Esvaziar</button></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-mark brand-mark--logo"><img src="assets/logo/logo-atelie-da-duda.png" alt="Ateliê da Duda — Doces Artesanais" width="150" height="150" /></a>
+        <p style="margin-top: var(--space-4)">Doces Artesanais</p>
+        <p data-store-city style="margin-top: var(--space-2)">Campo Grande — MS</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="pedido.html">Pedido</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <ul>
+          <li><a data-instagram-link href="#" target="_blank" rel="noopener">Instagram <span data-instagram-handle></span></a></li>
+          <li><a data-whatsapp-link href="#" target="_blank" rel="noopener">Fale no WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-store-slogan>Onde carinho vira doce ♡</span>
+      <span>© <span data-current-year></span> Ateliê da Duda</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/order-page.js"></script>
+</body>
+</html>

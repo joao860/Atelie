@@ -1,0 +1,11 @@
+{
+  "categories": [
+    {
+      "id": "bolos-de-pote",
+      "slug": "bolos-de-pote",
+      "name": "Bolos de pote",
+      "order": 1,
+      "active": true
+    }
+  ]
+}

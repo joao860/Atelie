@@ -1,0 +1,127 @@
+/* =========================================================
+   GLOBAL — base tipográfica, layout, utilitários
+========================================================= */
+
+body {
+  background: var(--color-cream);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-cocoa);
+  line-height: var(--lh-tight);
+  font-weight: 600;
+}
+
+p { color: var(--color-text-soft); }
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -60px;
+  background: var(--color-cocoa);
+  color: var(--color-cream);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  z-index: var(--z-modal);
+  transition: top var(--duration-base) var(--ease-standard);
+}
+.skip-link:focus { top: var(--space-4); }
+
+/* Foco visível consistente em todo o site */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Eyebrow — pequeno rótulo editorial em versal */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+/* Divisor ornamental com coração central */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  color: var(--color-border-strong);
+  margin-block: var(--space-6);
+}
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  flex: 1;
+  max-width: 96px;
+  height: 1px;
+  background: var(--color-border-strong);
+}
+.ornament-divider svg { width: 14px; height: 14px; color: var(--color-brand); flex-shrink: 0; }
+
+/* Seções */
+.section { padding-block: var(--space-9); }
+.section--tight { padding-block: var(--space-7); }
+.section-head { text-align: center; max-width: 640px; margin-inline: auto; margin-bottom: var(--space-7); }
+.section-head p { margin-top: var(--space-3); }
+
+/* Links utilitários */
+.text-link {
+  color: var(--color-brand);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+.text-link:hover { border-color: currentColor; }
+
+::selection { background: var(--color-brand-soft); color: var(--color-cocoa); }
+
+/* Placeholder de imagem — usado enquanto fotos reais não existem */
+.placeholder-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, var(--color-warm) 0%, var(--color-brand-soft) 100%);
+  color: var(--color-cocoa);
+  overflow: hidden;
+}
+.placeholder-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 55%);
+}
+.placeholder-media svg { width: 34%; height: 34%; opacity: 0.55; position: relative; z-index: 1; }

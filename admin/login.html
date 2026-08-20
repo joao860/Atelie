@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Entrar — Admin Ateliê da Duda</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../assets/logo/logo-atelie-da-duda.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tokens.css" />
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/global.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-login">
+    <div class="admin-login__card">
+      <span class="eyebrow">Ateliê da Duda</span>
+      <h1>Painel administrativo</h1>
+      <p>Entre com a senha de administrador para gerenciar cardápio, categorias e configurações.</p>
+
+      <form data-login-form>
+        <div class="admin-field">
+          <label for="password">Senha</label>
+          <input class="admin-input" type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+        <p class="admin-login__error" data-login-error></p>
+        <button type="submit" class="btn btn--primary btn--block">Entrar</button>
+      </form>
+
+      <p class="admin-login__help">Acesso restrito. A senha é validada com segurança no servidor.</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { login, checkSession } from "./js/auth.js";
+
+    const form = document.querySelector("[data-login-form]");
+    const errorEl = document.querySelector("[data-login-error]");
+
+    // Se já estiver autenticado, vai direto pro dashboard.
+    checkSession().then(({ authenticated }) => {
+      if (authenticated) window.location.href = "index.html";
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorEl.textContent = "";
+      const password = new FormData(form).get("password");
+      const result = await login(password);
+
+      if (result.ok) {
+        window.location.href = "index.html";
+        return;
+      }
+      if (result.backendUnavailable) {
+        errorEl.textContent = "Admin indisponível. Verifique a configuração segura do servidor.";
+        return;
+      }
+      errorEl.textContent = result.error;
+    });
+
+  </script>
+</body>
+</html>

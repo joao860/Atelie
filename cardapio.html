@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cardápio — Ateliê da Duda</title>
+<meta name="description" content="Conheça o cardápio completo do Ateliê da Duda: bolos de pote artesanais em diversos sabores." />
+<link rel="canonical" href="https://ateliedaduda.com.br/cardapio.html" />
+<link rel="icon" href="assets/logo/logo-atelie-da-duda.png" type="image/png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<div class="global-banner" data-global-banner hidden></div>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="index.html" class="brand-mark brand-mark--logo"><img src="assets/logo/logo-atelie-da-duda.png" alt="Ateliê da Duda — Doces Artesanais" width="150" height="150" /></a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="cardapio.html" aria-current="page">Cardápio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#como-pedir">Como pedir</a>
+    </nav>
+    <div class="header-actions">
+      <a href="pedido.html" class="icon-btn" aria-label="Ver pedido">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h2l2.4 12.1a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+        <span class="cart-count" data-cart-count hidden>0</span>
+      </a>
+      <button type="button" class="icon-btn icon-btn--menu" aria-label="Abrir menu" data-menu-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" data-mobile-menu data-open="false">
+  <div class="mobile-menu__overlay"></div>
+  <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button type="button" class="icon-btn mobile-menu__close" aria-label="Fechar menu" data-menu-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#como-pedir">Como pedir</a>
+    </nav>
+    <a href="cardapio.html" class="btn btn--primary btn--block">Fazer pedido</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <div class="ornament-divider">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.6-9.3-9C1 8.4 2.6 5 6 5c2 0 3.4 1.1 4 2.3C10.6 6.1 12 5 14 5c3.4 0 5 3.4 3.3 7-2.3 4.4-9.3 9-9.3 9z"/></svg>
+        </div>
+        <span class="eyebrow">Nosso cardápio</span>
+        <h1>Doces preparados artesanalmente</h1>
+        <p>Para adoçar seus momentos, um sabor de cada vez.</p>
+      </div>
+
+      <div class="category-filter" data-category-filter role="group" aria-label="Filtrar por categoria"></div>
+
+      <div class="menu-grid" data-product-grid></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-mark brand-mark--logo"><img src="assets/logo/logo-atelie-da-duda.png" alt="Ateliê da Duda — Doces Artesanais" width="150" height="150" /></a>
+        <p style="margin-top: var(--space-4)">Doces Artesanais</p>
+        <p data-store-city style="margin-top: var(--space-2)">Campo Grande — MS</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="pedido.html">Pedido</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <ul>
+          <li><a data-instagram-link href="#" target="_blank" rel="noopener">Instagram <span data-instagram-handle></span></a></li>
+          <li><a data-whatsapp-link href="#" target="_blank" rel="noopener">Fale no WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-store-slogan>Onde carinho vira doce ♡</span>
+      <span>© <span data-current-year></span> Ateliê da Duda</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mini-cart-bar" data-mini-cart-bar data-visible="false">
+  <span class="mini-cart-bar__icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h2l2.4 12.1a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="17" cy="21" r="1"/></svg>
+  </span>
+  <span class="mini-cart-bar__info" data-mini-cart-text></span>
+  <a href="pedido.html" class="btn">Ver pedido</a>
+</div>
+
+<script type="module" src="js/app.js"></script>
+<script type="module">
+  import { initCategoryFilter } from "./js/catalog.js";
+  initCategoryFilter(document.querySelector("[data-category-filter]"), document.querySelector("[data-product-grid]"));
+</script>
+</body>
+</html>

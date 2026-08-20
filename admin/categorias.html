@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Categorias — Admin Ateliê da Duda</title><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/admin.css">
+</head><body class="admin-body"><div class="admin-shell"><aside class="admin-sidebar">
+<div class="admin-sidebar__brand">Ateliê da Duda<span>Painel administrativo</span></div>
+<nav class="admin-nav">
+<a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 10 12 3l8 7v10H4z"/></svg>Dashboard</a>
+<a href="produtos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16v13H4z"/></svg>Produtos</a>
+<a href="categorias.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v5H4zM4 14h16v5H4z"/></svg>Categorias</a>
+<a href="configuracoes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/></svg>Configurações</a>
+<a href="../index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 3h7v7M10 14 21 3"/></svg>Ver site</a>
+</nav><button type="button" data-logout>Sair</button><div class="admin-sidebar__footer">Ateliê da Duda © <span data-current-year></span></div></aside>
+<div class="admin-main"><div class="admin-topbar"><h1>Categorias</h1><button class="btn btn--primary btn--sm" type="button" data-add-category>+ Nova categoria</button></div><div class="admin-content"><form data-category-form><section class="admin-form-section"><div class="admin-form-section__header"><h2>Organização do cardápio</h2><p>Crie categorias e defina a ordem em que aparecem.</p></div><div data-category-list></div><button class="btn btn--secondary btn--sm" type="button" data-add-category>+ Adicionar categoria</button></section><div class="admin-save-bar"><span class="admin-login__error" data-form-status></span><button type="submit" class="btn btn--primary">Salvar categorias</button></div></form></div></div></div>
+<template data-category-template><div class="admin-variant-row"><div class="admin-field"><label>Nome</label><input class="admin-input" data-field="name" required placeholder="Ex.: Bolos de pote"></div><div class="admin-field"><label>Ordem</label><input class="admin-input" data-field="order" type="number" min="1" required></div><label><input type="checkbox" data-field="active" checked> Ativa</label><button class="btn btn--ghost btn--sm" type="button" data-remove>Remover</button></div></template>
+<script type="module" src="js/categorias.js"></script></body></html>

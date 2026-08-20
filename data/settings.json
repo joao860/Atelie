@@ -1,0 +1,32 @@
+{
+  "brand": {
+    "name": "Ateliê da Duda",
+    "positioning": "Doces Artesanais",
+    "slogan": "Onde carinho vira doce ♡",
+    "city": "Campo Grande — MS"
+  },
+  "contact": {
+    "whatsappNumber": "556793168204",
+    "whatsappMessagePrefix": "Olá! ♡\n\nGostaria de fazer um pedido no Ateliê da Duda.",
+    "instagramHandle": "@atelier__da__duda",
+    "instagramUrl": "https://instagram.com/atelier__da__duda"
+  },
+  "store": {
+    "acceptingOrders": true,
+    "pausedMessage": "Pedidos pausados no momento",
+    "availabilityMessage": "Poderia confirmar a disponibilidade para mim?",
+    "notConfirmedNotice": "O envio pelo WhatsApp não confirma automaticamente o pedido. A disponibilidade será confirmada pelo atendimento.",
+    "attendanceHours": "Terça a sábado, das 9h às 18h"
+  },
+  "banner": {
+    "active": false,
+    "message": "Pedidos para sexta-feira abertos ♡"
+  },
+  "footer": {
+    "links": [
+      { "label": "Cardápio", "href": "cardapio.html" },
+      { "label": "Sobre", "href": "sobre.html" },
+      { "label": "Pedido", "href": "pedido.html" }
+    ]
+  }
+}

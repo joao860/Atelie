@@ -1,0 +1,14 @@
+name = "atelier-da-duda"
+pages_build_output_dir = "."
+compatibility_date = "2024-01-01"
+
+# Variáveis de ambiente locais para `wrangler pages dev`.
+# Em produção, configure as mesmas chaves em:
+# Cloudflare Dashboard > Workers & Pages > seu projeto > Settings > Environment variables
+#
+# [vars]
+# ADMIN_PASSWORD_HASH = "hash sha256 em hex da senha do admin"
+# SESSION_SECRET = "uma string aleatória longa"
+# GITHUB_TOKEN = "token do GitHub com escopo apenas neste repositório"
+# GITHUB_REPO = "usuario/repositorio"
+# GITHUB_BRANCH = "main"

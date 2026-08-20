@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Produtos — Admin Ateliê da Duda</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../assets/logo/logo-atelie-da-duda.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tokens.css" />
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/global.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">Ateliê da Duda<span>Painel administrativo</span></div>
+      <nav class="admin-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Dashboard</a>
+        <a href="produtos.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M4 7l3-4h10l3 4"/></svg>Produtos</a>
+        <a href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v5H4zM4 14h16v5H4z"/></svg>Categorias</a>
+        <a href="configuracoes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/></svg>Configurações</a>
+        <a href="../index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v7H3V3h7"/></svg>Ver site</a>
+      </nav>
+      <button type="button" style="all:unset; cursor:pointer; display:flex; align-items:center; gap: var(--space-3); font-size: var(--fs-small); font-weight:600; color: var(--color-warm)" data-logout>Sair</button>
+      <div class="admin-sidebar__footer">Ateliê da Duda © <span data-current-year></span></div>
+    </aside>
+
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <h1>Produtos</h1>
+        <a href="produto.html" class="btn btn--primary btn--sm">+ Novo produto</a>
+      </div>
+
+      <div class="admin-content">
+        <div class="admin-toolbar">
+          <input type="search" class="admin-input" placeholder="Buscar produto…" data-search style="flex:1; min-width:200px" />
+          <select class="admin-select" data-filter-category></select>
+          <select class="admin-select" data-filter-status>
+            <option value="todos">Todos os status</option>
+            <option value="ativo">Ativos</option>
+            <option value="inativo">Inativos</option>
+          </select>
+        </div>
+
+        <div class="admin-table-card" data-product-list></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/produtos.js"></script>
+</body>
+</html>

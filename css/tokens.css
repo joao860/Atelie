@@ -1,0 +1,96 @@
+/* =========================================================
+   ATELIÊ DA DUDA — DESIGN TOKENS
+   Fonte única de verdade para cor, tipografia, espaçamento,
+   raio, sombra e movimento. Nada de valores soltos no CSS.
+========================================================= */
+
+:root {
+  /* ---------- Cor ---------- */
+  --color-brand: #A40F1C;
+  --color-brand-dark: #7E0D17;
+  --color-brand-soft: #F5C3C7;
+  --color-cream: #FFF9F4;
+  --color-surface: #FFFFFF;
+  --color-warm: #E8D3BD;
+  --color-cocoa: #3A2018;
+  --color-text: #241815;
+  --color-text-soft: #6B5B54;
+  --color-text-inverse: #FFF9F4;
+  --color-border: #EAE0D6;
+  --color-border-strong: #D8C7B6;
+  --color-success: #2F6B3F;
+  --color-danger: #A40F1C;
+
+  /* Superfícies derivadas */
+  --color-surface-sunken: #FBF3EC;
+  --color-overlay: rgba(36, 24, 21, 0.55);
+
+  /* ---------- Tipografia ---------- */
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-body: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: "Playfair Display", var(--font-display);
+
+  --fs-hero: clamp(2.6rem, 6vw + 1rem, 4.6rem);
+  --fs-h1: clamp(2.1rem, 4vw + 1rem, 3.2rem);
+  --fs-h2: clamp(1.6rem, 2.6vw + 1rem, 2.3rem);
+  --fs-h3: clamp(1.25rem, 1.4vw + 1rem, 1.55rem);
+  --fs-lead: clamp(1.05rem, 1vw + 0.8rem, 1.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+  --fs-price: clamp(1.5rem, 3vw, 1.75rem);
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-normal: 1.55;
+
+  --ls-eyebrow: 0.14em;
+
+  /* ---------- Espaçamento ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---------- Raio ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* ---------- Sombra ---------- */
+  --shadow-xs: 0 1px 2px rgba(58, 32, 24, 0.06);
+  --shadow-sm: 0 4px 16px rgba(58, 32, 24, 0.08);
+  --shadow-md: 0 12px 32px rgba(58, 32, 24, 0.12);
+  --shadow-brand: 0 10px 24px rgba(164, 15, 28, 0.22);
+
+  /* ---------- Movimento ---------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 320ms;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1240px;
+  --container-padding: clamp(20px, 5vw, 64px);
+  --header-height: 72px;
+  --header-height-mobile: 64px;
+  --z-header: 40;
+  --z-drawer: 60;
+  --z-modal: 70;
+  --z-toast: 80;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}

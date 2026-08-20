@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Produto — Admin Ateliê da Duda</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../assets/logo/logo-atelie-da-duda.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tokens.css" />
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/global.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">Ateliê da Duda<span>Painel administrativo</span></div>
+      <nav class="admin-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Dashboard</a>
+        <a href="produtos.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M4 7l3-4h10l3 4"/></svg>Produtos</a>
+        <a href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v5H4zM4 14h16v5H4z"/></svg>Categorias</a>
+        <a href="configuracoes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/></svg>Configurações</a>
+        <a href="../index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v7H3V3h7"/></svg>Ver site</a>
+      </nav>
+      <button type="button" style="all:unset; cursor:pointer; display:flex; align-items:center; gap: var(--space-3); font-size: var(--fs-small); font-weight:600; color: var(--color-warm)" data-logout>Sair</button>
+      <div class="admin-sidebar__footer">Ateliê da Duda © <span data-current-year></span></div>
+    </aside>
+
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <h1 data-form-title>Novo produto</h1>
+        <a href="produtos.html" class="btn btn--secondary btn--sm">Voltar</a>
+      </div>
+
+      <div class="admin-content">
+        <form data-product-form>
+          <section class="admin-form-section">
+          <div class="admin-form-section__header"><h2>Informações principais</h2><p>O que o cliente verá no cardápio e na página do produto.</p></div>
+          <div class="admin-form-grid">
+            <div class="admin-field">
+              <label for="name">Nome do produto</label>
+              <input class="admin-input" id="name" name="name" required />
+            </div>
+
+            <div class="admin-field">
+              <label for="slug">URL do produto <span class="admin-helper">(avançado)</span></label>
+              <input class="admin-input" id="slug" name="slug" placeholder="Gerada automaticamente pelo nome" />
+              <span class="admin-helper">Não precisa preencher; use apenas se quiser personalizar o endereço.</span>
+            </div>
+
+            <div class="admin-field">
+              <label for="category">Categoria</label>
+              <select class="admin-select" id="category" name="category" data-category-select></select>
+            </div>
+
+            <div class="admin-field">
+              <label for="shortDescription">Descrição curta (aparece no card do cardápio)</label>
+              <textarea class="admin-textarea" id="shortDescription" name="shortDescription" rows="2" maxlength="180" required></textarea>
+            </div>
+
+            <div class="admin-field">
+              <label for="description">Descrição completa</label>
+              <textarea class="admin-textarea" id="description" name="description" rows="4"></textarea>
+            </div>
+
+          </div></section>
+
+          <section class="admin-form-section">
+          <div class="admin-form-section__header"><h2>Exibição</h2><p>Controle onde e em que ordem este produto aparece.</p></div>
+          <div class="admin-form-grid">
+            <div class="admin-field admin-field--row">
+              <label for="active" style="margin:0">Disponível no cardápio</label>
+              <input type="checkbox" id="active" name="active" checked />
+            </div>
+
+            <div class="admin-field admin-field--row">
+              <label for="featured" style="margin:0">Produto em destaque</label>
+              <input type="checkbox" id="featured" name="featured" />
+            </div>
+
+            <div class="admin-field">
+              <label for="badge">Badge (opcional)</label>
+              <input class="admin-input" id="badge" name="badge" placeholder="Ex.: Mais pedido" />
+            </div>
+
+            <div class="admin-field">
+              <label for="order">Ordem de exibição</label>
+              <input class="admin-input" type="number" id="order" name="order" value="1" min="1" />
+            </div>
+          </div></section>
+
+          <section class="admin-form-section">
+            <div class="admin-form-section__header"><h2>Sabores</h2><p>Cadastre preço, disponibilidade e foto de cada sabor.</p></div>
+          <div class="admin-field">
+            <div data-variants></div>
+            <button type="button" class="btn btn--secondary btn--sm" data-add-variant style="align-self:flex-start; margin-top: var(--space-2)">+ Adicionar sabor</button>
+          </div>
+          </section>
+
+          <section class="admin-form-section">
+            <div class="admin-form-section__header"><h2>Prévia no cardápio</h2><p>Uma aproximação de como o produto aparecerá para o cliente.</p></div>
+            <div class="admin-preview" data-product-preview><img data-product-preview-image src="../assets/products/placeholder-bolo-pote.svg" alt="Prévia do produto"><div><span class="badge" data-product-preview-badge hidden></span><h3 data-product-preview-name>Nome do produto</h3><span class="admin-preview__price" data-product-preview-price>R$ 0,00</span></div></div>
+          </section>
+
+          <fieldset class="admin-form-section admin-form-grid">
+            <legend>SEO <span class="admin-helper">(opcional)</span></legend>
+            <div class="admin-field">
+              <label for="seoTitle">Título para SEO</label>
+              <input class="admin-input" id="seoTitle" name="seoTitle" />
+            </div>
+            <div class="admin-field">
+              <label for="seoDescription">Descrição para SEO</label>
+              <textarea class="admin-textarea" id="seoDescription" name="seoDescription" rows="2"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="admin-save-bar">
+            <span class="admin-login__error" data-form-status style="align-self:center; margin-right:auto;"></span>
+            <a href="produtos.html" class="btn btn--secondary">Cancelar</a>
+            <button type="submit" class="btn btn--primary">Salvar produto</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <template data-variant-template>
+    <div class="admin-variant-row">
+      <div class="admin-field"><label>Nome do sabor</label><input class="admin-input" data-field="name" placeholder="Ex.: Brigadeiro" required /></div>
+      <div class="admin-field"><label>Preço (R$)</label><input class="admin-input" data-field="price" type="number" step="0.01" min="0" placeholder="13,00" required /></div>
+      <label style="display:flex; align-items:center; gap:6px; font-size: var(--fs-xs)"><input type="checkbox" data-field="available" checked /> Disponível</label>
+      <button type="button" class="btn btn--ghost btn--sm" data-remove-variant>Remover</button>
+      <div class="admin-field" style="grid-column:1/-1"><label>Descrição do sabor</label><textarea class="admin-textarea" data-field="description" rows="2" placeholder="Descreva recheio, massa e diferenciais"></textarea></div>
+      <div class="admin-field"><label>Badge do sabor <span class="admin-helper">(opcional)</span></label><input class="admin-input" data-field="badge" placeholder="Ex.: Novidade" /></div>
+      <div class="admin-upload">
+        <label>Foto do sabor</label><span class="admin-helper">JPEG, PNG ou WebP, até 5 MB. Recomendado: WebP 1200×1500 (4:5).</span>
+        <input type="file" data-field="image-file" accept="image/jpeg,image/png,image/webp" />
+        <input type="hidden" data-field="images" />
+        <div class="admin-upload__preview" data-image-preview hidden><img alt="Prévia da foto" data-preview-image /><div><span data-preview-name></span><button type="button" class="btn btn--ghost btn--sm" data-remove-image>Remover foto</button></div></div>
+        <p class="admin-login__error" data-upload-status></p>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="js/produto-form.js"></script>
+</body>
+</html>

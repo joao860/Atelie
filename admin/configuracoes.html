@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Configurações — Admin Ateliê da Duda</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../assets/logo/logo-atelie-da-duda.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tokens.css" />
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/global.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__brand">Ateliê da Duda<span>Painel administrativo</span></div>
+      <nav class="admin-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Dashboard</a>
+        <a href="produtos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16v13H4z"/><path d="M4 7l3-4h10l3 4"/></svg>Produtos</a>
+        <a href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v5H4zM4 14h16v5H4z"/></svg>Categorias</a>
+        <a href="configuracoes.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/></svg>Configurações</a>
+        <a href="../index.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v7H3V3h7"/></svg>Ver site</a>
+      </nav>
+      <button type="button" style="all:unset; cursor:pointer; display:flex; align-items:center; gap: var(--space-3); font-size: var(--fs-small); font-weight:600; color: var(--color-warm)" data-logout>Sair</button>
+      <div class="admin-sidebar__footer">Ateliê da Duda © <span data-current-year></span></div>
+    </aside>
+
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <h1>Configurações</h1>
+      </div>
+
+      <div class="admin-content">
+        <form data-settings-form>
+          <fieldset style="border:none; padding:0; margin-bottom: var(--space-8)">
+            <legend style="font-family: inherit; font-size: 1.2rem; margin-bottom: var(--space-4)">Marca</legend>
+            <div class="admin-form-grid">
+              <div class="admin-field"><label for="brandName">Nome da marca</label><input class="admin-input" id="brandName" required /></div>
+              <div class="admin-field"><label for="positioning">Posicionamento</label><input class="admin-input" id="positioning" /></div>
+              <div class="admin-field"><label for="slogan">Slogan</label><input class="admin-input" id="slogan" /></div>
+              <div class="admin-field"><label for="city">Cidade</label><input class="admin-input" id="city" /></div>
+            </div>
+          </fieldset>
+
+          <fieldset style="border:none; padding:0; margin-bottom: var(--space-8)">
+            <legend style="font-family: inherit; font-size: 1.2rem; margin-bottom: var(--space-4)">Contato</legend>
+            <div class="admin-form-grid">
+              <div class="admin-field">
+                <label for="whatsappNumber">WhatsApp (somente números, com DDI e DDD — ex.: 5567999999999)</label>
+                <input class="admin-input" id="whatsappNumber" pattern="[0-9]+" required />
+              </div>
+              <div class="admin-field"><label for="whatsappPrefix">Mensagem inicial do WhatsApp</label><textarea class="admin-textarea" id="whatsappPrefix" rows="2"></textarea></div>
+              <div class="admin-field"><label for="instagramHandle">Instagram (@usuário)</label><input class="admin-input" id="instagramHandle" /></div>
+              <div class="admin-field"><label for="instagramUrl">Link do Instagram</label><input class="admin-input" id="instagramUrl" type="url" /></div>
+            </div>
+          </fieldset>
+
+          <fieldset style="border:none; padding:0; margin-bottom: var(--space-8)">
+            <legend style="font-family: inherit; font-size: 1.2rem; margin-bottom: var(--space-4)">Pedidos</legend>
+            <div class="admin-form-grid">
+              <div class="admin-field admin-field--row">
+                <label for="acceptingOrders" style="margin:0">Aceitando pedidos</label>
+                <input type="checkbox" id="acceptingOrders" />
+              </div>
+              <div class="admin-field"><label for="pausedMessage">Mensagem quando pausado</label><input class="admin-input" id="pausedMessage" /></div>
+              <div class="admin-field"><label for="availabilityMessage">Frase final da mensagem de WhatsApp</label><input class="admin-input" id="availabilityMessage" /></div>
+              <div class="admin-field"><label for="attendanceHours">Horário de atendimento</label><input class="admin-input" id="attendanceHours" /></div>
+            </div>
+          </fieldset>
+
+          <fieldset style="border:none; padding:0; margin-bottom: var(--space-8)">
+            <legend style="font-family: inherit; font-size: 1.2rem; margin-bottom: var(--space-4)">Mensagem</legend>
+            <div class="admin-form-grid">
+              <div class="admin-field admin-field--row">
+                <label for="bannerActive" style="margin:0">Exibir banner no topo do site</label>
+                <input type="checkbox" id="bannerActive" />
+              </div>
+              <div class="admin-field"><label for="bannerMessage">Mensagem do banner</label><input class="admin-input" id="bannerMessage" placeholder="Ex.: Pedidos para sexta-feira abertos ♡" /></div>
+            </div>
+          </fieldset>
+
+          <div class="admin-save-bar">
+            <span class="admin-login__error" data-form-status style="align-self:center; margin-right:auto;"></span>
+            <button type="submit" class="btn btn--primary">Salvar configurações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/configuracoes.js"></script>
+</body>
+</html>
