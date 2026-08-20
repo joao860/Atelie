@@ -19,44 +19,52 @@
           "slug": "brigadeiro",
           "name": "Brigadeiro",
           "description": "Massa de chocolate macia com recheio cremoso de brigadeiro artesanal.",
-          "price": 13.0,
+          "price": 13,
           "available": true,
           "badge": null,
           "order": 1,
-          "images": ["assets/products/placeholder-bolo-pote.svg"]
+          "images": [
+            "assets/products/placeholder-bolo-pote.svg"
+          ]
         },
         {
           "id": "prestigio",
           "slug": "prestigio",
           "name": "Prestígio",
           "description": "Massa de chocolate com recheio de brigadeiro e coco fresquinho.",
-          "price": 13.0,
+          "price": 13,
           "available": true,
           "badge": null,
           "order": 2,
-          "images": ["assets/products/placeholder-bolo-pote.svg"]
+          "images": [
+            "assets/products/placeholder-bolo-pote.svg"
+          ]
         },
         {
           "id": "ninho",
           "slug": "ninho",
           "name": "Ninho",
           "description": "Massa branca fofinha com creme de leite Ninho artesanal.",
-          "price": 13.0,
+          "price": 13,
           "available": true,
           "badge": "Especial da Duda",
           "order": 3,
-          "images": ["assets/products/placeholder-bolo-pote.svg"]
+          "images": [
+            "assets/products/placeholder-bolo-pote.svg"
+          ]
         },
         {
           "id": "ninho-avela",
-          "slug": "ninho-creme-de-avela",
-          "name": "Ninho + Creme de Avelã",
+          "slug": "ninho-creme-de-nutella",
+          "name": "Ninho + Creme de Nutella",
           "description": "Massa branca fofinha intercalada com creme de Ninho e creme de avelã.",
-          "price": 15.0,
+          "price": 16,
           "available": true,
           "badge": "Novidade",
           "order": 4,
-          "images": ["assets/products/placeholder-bolo-pote.svg"]
+          "images": [
+            "assets/products/placeholder-bolo-pote.svg"
+          ]
         }
       ]
     }
